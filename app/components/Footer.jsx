@@ -1,48 +1,67 @@
-import React from 'react'
+import React from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='flex h-fit space-x-2 flex-row px-40 bg-black text-white justify-between py-8'>
+    <div 
+    style={{
+        backgroundImage: `url('./f-bg.jpg')`,
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat', 
+      }}
+    className="flex flex-col h-fit items-center space-x-2 py-12  px-40 bg-black/20 text-white justify-between "
+    >
+      {/* About Us */}
+      <h1 className="text-6xl text-white mb-10 mr-auto">CONTACT US</h1>
 
-        {/* About Us */}
-        <div className='w-full'>
-            <h1 className='w-fit flex flex-col text-2xl font-[500]'>About Us
-                <div className='w-1/2 h-[2px] bg-yellow-400 mt-4'></div>
-            </h1>
-
-            <div className='mt-8'>
-                <h1 className='text-[#777676]'>
-                E.V.A floats are manufactured from Ethylene Vinyl Acetate (E.V.A) which is superior compared to other material and have an excellent elasticity.
-                </h1>
-            </div>
+      <div className="flex space-x-2">
+        <div className="flex flex-col w-full">
+          <h1 className="text-[#CAC517] text-lg my-4">DURALITE PTY LTD</h1>
+          <p className="text-sm  leading-loose">
+            KSI Global Australia’s focus is to provide exceptionally engineered
+            road safety crash barrier systems and solutions to reduce repair
+            costs and assist in reducing road fatalities.
+          </p>
         </div>
-
-        {/* Navigation */}
-        <div className='w-full'>
-        <h1 className='w-fit flex flex-col text-2xl font-[500]'>Navigation
-                <div className='w-1/2 h-[2px] bg-yellow-400 mt-4'></div>
-
-            </h1>
-            <div className='mt-8 flex space-y-2 text-sm font-[500] flex-col justify-items-start text-start'>
-                <button className='flex items-center justify-center gap-2 w-fit'><MdKeyboardDoubleArrowRight/>HOME</button>
-                <button className='flex items-center justify-center gap-2 w-fit'><MdKeyboardDoubleArrowRight/>ABOUT</button>
-                <button className='flex items-center justify-center gap-2 w-fit'><MdKeyboardDoubleArrowRight/>PRODUCTS</button>
-                <button className='flex items-center justify-center gap-2 w-fit'><MdKeyboardDoubleArrowRight/>WHY US?</button>
-
-            </div>
-
+        <div className="flex flex-col w-full">
+          <h1 className="text-[#CAC517] text-lg my-4">HEAD OFFICE</h1>
+          <p className="text-sm leading-loose">
+            KSI Global Australia Pty Ltd 61 Foskew Way, Geraldton, Western
+            Australia 6530
+          </p>
+          <div className="flex flex-col text-sm space-y-2 my-4">
+            <p className="whitespace-nowrap">
+              <span className="text-[#CAC517]">Tel:</span> +91 9529575726
+            </p>
+            <p className="whitespace-nowrap">
+              <span className="text-[#CAC517]">Fax:</span> +91 9529575726
+            </p>
+            <p className="whitespace-nowrap">
+              <span className="text-[#CAC517]">Email:</span>{" "}
+              amanshaikh8624@gmail.com
+            </p>
+          </div>
         </div>
+        <div className="flex flex-col w-full">
+          <h1 className="text-[#CAC517] text-lg my-4 whitespace-nowrap">
+            FOLLOW US
+          </h1>
 
-        {/* Gallery */}
-        <div className='w-full'>
-        <h1 className='w-fit flex flex-col text-2xl font-[500]'>Gallery
-                <div className='w-1/2 h-[2px] bg-yellow-400 mt-4'></div>
-            </h1>
+          <div className="flex flex-row text-2xl w-full justify-between pr-16">
+            <FaFacebookF className="hover:text-gray-400"/>
+            <FaInstagram className="hover:text-gray-400"/>
+            <FaLinkedin className="hover:text-gray-400"/>
+            <FaTwitter className="hover:text-gray-400"/>
+          </div>
         </div>
-        
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
