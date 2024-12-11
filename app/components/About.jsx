@@ -21,10 +21,10 @@ const AboutTitle = () => {
           About
         </h1>
 
-        {/* About us and experience container */}
-        <div className="bg-white py-20 h-fit shadow-xl max-w-7xl mx-auto px-40">
+        {/* About us s experience container */}
+        <div className="bg-white py-20 h-fit shadow-xl w-full px-40">
           <h1 className="text-5xl text-[#F2BE37] font-[700]">
-          Drawing on years  of experience
+          Drawing on years of experience
           </h1>
           <p className="text-3xl text-[#6F6D70] py-8">
           Duralite focus is to provide exceptionally engineered road safety crash barrier systems and solutions to reduce repair costs and assist in reducing road fatalities globally.

@@ -21,8 +21,9 @@ const WhyUs = () => {
           Why Us
         </h1>
 
-        {/* About us and experience container */}
-        <div className="bg-white py-20 h-fit shadow-xl max-w-7xl mx-auto px-40">
+        {/* About us and experience s */}
+
+        <div className="bg-white py-20 h-fit shadow-xl  px-40">
           <h1 className="text-5xl text-[#F2BE37] font-[700]">
           Drawing on years  of experience
           </h1>
