@@ -76,18 +76,17 @@ export default function Header({ children }) {
             } transition-all duration-300 ease-in-out text-sm font-medium`}
           >
             {navLinks.map(({ title, path }) => (
-              <Link href={path}>
-              <li
-                key={title}
-                className={`cursor-pointer md:py-4 transition-all duration-300 ${
-                  activeTab === title
-                    ? "text-[#004185] border-b-[3px] border-[#004185]"
-                    : "text-black border-b-[3px] border-transparent hover:border-[#004185] hover:text-blue-700"
-                }`}
-                onClick={() => handleTabClick(title)}
-              >
-                {title}
-              </li>
+              <Link key={title} href={path}>
+                <li
+                  className={`cursor-pointer md:py-4 transition-all duration-300 ${
+                    activeTab === title
+                      ? "text-[#004185] border-b-[3px] border-[#004185]"
+                      : "text-black border-b-[3px] border-transparent hover:border-[#004185] hover:text-blue-700"
+                  }`}
+                  onClick={() => handleTabClick(title)}
+                >
+                  {title}
+                </li>
               </Link>
             ))}
           </ul>
