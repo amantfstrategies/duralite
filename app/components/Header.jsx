@@ -6,6 +6,7 @@ import { FaFacebookF, FaLink } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 export default function Header({ children }) {
   const [activeTab, setActiveTab] = useState("HOME");
@@ -25,7 +26,7 @@ export default function Header({ children }) {
 
   return (
     <div>
-      <div className="bg-white px-4 md:mx-40 py-4">
+      <div className="bg-white px-4 md:px-40 py-4">
         <div className="flex justify-between items-center">
           <img
             src="./logo.png"
@@ -53,15 +54,29 @@ export default function Header({ children }) {
       </div>
 
       <div className="sticky top-0 z-50 bg-[#F5F5F5] shadow-md">
-        <nav className="flex justify-between items-center px-4 md:mx-40 ">
+        {/* Hamburger Menu button */}
+        <div className="md:hidden ml-auto right-4 top-4 z-50">
+          <button
+            className="w-8 h-8 ml-auto py-8 mr-4 flex justify-center items-center"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <HiX className="w-8 h-8 text-[#004185]" />
+            ) : (
+              <HiMenuAlt3 className="w-8 h-8 text-black" />
+            )}
+          </button>
+        </div>
+        <nav className="flex justify-between items-center px-4 md:mx-40 relative">
           <ul
             className={`${
               isMobileMenuOpen
-                ? "flex flex-col space-y-4 w-full text-center mt-4 bg-gray-200 "
+                ? "flex flex-col space-y-4 w-full text-center mt-4 bg-gray-200 p-4"
                 : "hidden md:flex md:flex-row md:space-x-8"
-            } text-sm font-medium`}
+            } transition-all duration-300 ease-in-out text-sm font-medium`}
           >
             {navLinks.map(({ title, path }) => (
+              <Link href={path}>
               <li
                 key={title}
                 className={`cursor-pointer md:py-4 transition-all duration-300 ${
@@ -71,23 +86,13 @@ export default function Header({ children }) {
                 }`}
                 onClick={() => handleTabClick(title)}
               >
-                <Link href={path}>{title}</Link>
+                {title}
               </li>
+              </Link>
             ))}
           </ul>
 
-          {/* Hamburger Menu button */}
-          <div className="md:hidden mr-auto">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? (
-                <div className="w-6 h-6 bg-black"></div>
-              ) : (
-                <div className="w-6 h-6 bg-black"></div>
-              )}
-            </button>
-          </div>
-
-          <div className="flex flex-row font-[400] text-sm md:text-base">
+          <div className="hidden md:flex flex-row font-[400] text-sm md:text-base">
             <button className="text-black py-4 px-4">+91 9529575726</button>
             <button className="text-white font-sans bg-[#004185] py-4 px-4 rounded-sm">
               CONTACT US

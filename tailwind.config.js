@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif'], // Set Open Sans as the default sans-serif font
+        // sans: ['Open Sans', 'sans-serif'], // Set Open Sans as the default sans-serif font
+        // sans: ['Montserrat'], // Add Montserrat to the default sans stack
       },
       colors: {
         background: "var(--background)",
