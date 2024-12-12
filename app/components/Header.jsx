@@ -19,15 +19,15 @@ export default function Header() {
   };
 
   const navLinks = [
-    { title: "HOME", path: "/Home" },
-    { title: "ABOUT", path: "/About" },
-    { title: "PRODUCTS", path: "/Products" },
-    { title: "WHY US?", path: "/Whyus" },
+    { title: "HOME", path: "/home" },
+    { title: "ABOUT", path: "/about" },
+    { title: "PRODUCTS", path: "/product" },
+    { title: "WHY US?", path: "/whyus" },
   ];
 
   return (
     <>
-      <div className="bg-white px-4 md:px-40 py-4">
+      <div className="bg-white md:px-40 py-4">
         <div className="flex justify-between items-center">
           <div className="relative flex items-center justify-center h-8 md:h-16 border-r-2 pr-3">
             <Image
@@ -74,7 +74,7 @@ export default function Header() {
             )}
           </button>
         </div>
-        <nav className="flex justify-between items-center px-4 md:mx-40 relative">
+        <nav className="flex justify-between items-center md:mx-40 relative">
           <ul
             className={`${
               isMobileMenuOpen
