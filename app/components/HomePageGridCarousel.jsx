@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 
 const HomePageGridCarousel = () => {
   const CarouselCollection = [
-    { imgurl: "./carousel/img1" },
-    { imgurl: "./carousel/img2" },
-    { imgurl: "./carousel/img3" },
-    { imgurl: "./carousel/img4" },
-    { imgurl: "./carousel/img5" },
+    { imgurl: "carousel/img1" }, // path relative to the public folder
+    { imgurl: "carousel/img2" },
+    { imgurl: "carousel/img3" },
+    { imgurl: "carousel/img4" },
+    { imgurl: "carousel/img5" },
   ];
 
   const [firstCarouselIndex, setFirstCarouselIndex] = useState(0);
@@ -32,12 +32,11 @@ const HomePageGridCarousel = () => {
   }, []);
 
   const renderCarousel = (index, animationClass) => (
-    <div className="relative  w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       {CarouselCollection.map((item, idx) => (
         <div key={idx} className="absolute inset-0 w-full h-full">
           <Image
-            key={idx}
-            src={`/${item.imgurl}.jpg`}
+            src={`/${item.imgurl}.jpg`} // Corrected image path
             alt={`carousel image ${idx + 1}`}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
               idx === index ? "opacity-100" : "opacity-0"
