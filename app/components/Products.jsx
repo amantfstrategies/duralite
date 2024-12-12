@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { GoArrowRight } from "react-icons/go";
 
@@ -95,31 +96,41 @@ const Products = () => {
 
       {/* Main Image */}
       <div className="p-4 rounded h-100 w-full">
-        <img
-          className={`h-screen w-full object-cover rounded-xl transition-all duration-500 ease-in-out ${
-            (isVisible || isAnimating) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-          src={selectedProduct.productImg}
-          alt="Product"
-        />
+        <div className="relative h-screen w-full">
+          <Image
+            className={`h-screen w-full object-cover rounded-xl transition-all duration-500 ease-in-out ${
+              isVisible || isAnimating
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+            src={selectedProduct.productImg}
+            alt="Product"
+            layout="fill" // Ensures the image fills the parent container
+            objectFit="cover" // Matches object-cover behavior
+          />
+        </div>
       </div>
 
       {/* Sub Image and Description */}
       <div className="flex flex-col p-4 w-full">
         <div className="h-1/2 w-full">
-          <img
-            className={`h-full w-full rounded-xl object-cover transition-all duration-500 ease-in-out ${
-              (isVisible || isAnimating) ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-            }`}
-            src={selectedProduct.productSubImage}
-            alt="Product"
-          />
+          <div className="relative h-full w-full">
+            <Image
+              className={`h-full w-full rounded-xl object-cover transition-all duration-500 ease-in-out ${
+                isVisible || isAnimating
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-10"
+              }`}
+              src={selectedProduct.productSubImage}
+              alt="Product"
+              layout="fill" 
+              objectFit="cover"
+            />
+          </div>
         </div>
         <div className="flex flex-col h-1/2 py-2">
           <h1 className="text-2xl font-[500]">{selectedProduct.name}</h1>
-          <p
-            className="transition-all duration-500 ease-in-out mt-2 text-gray-600"
-          >
+          <p className="transition-all duration-500 ease-in-out mt-2 text-gray-600">
             {selectedProduct.productDesc}
           </p>
           <button className="flex transition-all duration-500 ease-in-out mt-auto flex-row w-fit py-3 px-6 rounded-full text-sm font-[500] space-x-2 items-center text-white bg-[#004185]">

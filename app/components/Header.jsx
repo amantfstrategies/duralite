@@ -7,14 +7,15 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import Image from "next/image";
 
-export default function Header({ children }) {
+export default function Header() {
   const [activeTab, setActiveTab] = useState("HOME");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    setIsMobileMenuOpen(false); // Close menu when a tab is clicked
+    setIsMobileMenuOpen(false); 
   };
 
   const navLinks = [
@@ -25,14 +26,20 @@ export default function Header({ children }) {
   ];
 
   return (
-    <div>
+    <>
       <div className="bg-white px-4 md:px-40 py-4">
         <div className="flex justify-between items-center">
-          <img
-            src="./logo.png"
-            alt="Logo"
-            className="h-8 md:h-16 border-r-2 pr-3"
-          />
+          <div className="relative flex items-center justify-center h-8 md:h-16 border-r-2 pr-3">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              className="h-8 md:h-16"
+              layout="responsive"
+              width={256}
+              height={64}
+            />
+          </div>
+
           <h1 className="mr-auto text-xs md:text-base ml-3 font-[500] text-gray-500">
             Duralite Solutions Icn.
           </h1>
@@ -100,8 +107,7 @@ export default function Header({ children }) {
         </nav>
       </div>
 
-      {/* Main Content */}
-      <div className="">{children}</div>
-    </div>
+
+    </>
   );
 }

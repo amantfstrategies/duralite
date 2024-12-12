@@ -24,13 +24,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Created by Aman Imtiyaz Shaikh */}
-        <Header>{children}
-        <Footer/>
-        </Header>
-        
-
-        {/* Created by Aman Imtiyaz Shaikh */}
+        <div>
+          <Header />
+          {/* Main Content */}
+          <div className="">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

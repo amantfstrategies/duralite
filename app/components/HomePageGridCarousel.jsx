@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const HomePageGridCarousel = () => {
@@ -33,14 +34,18 @@ const HomePageGridCarousel = () => {
   const renderCarousel = (index, animationClass) => (
     <div className="relative  w-full h-full overflow-hidden">
       {CarouselCollection.map((item, idx) => (
-        <img
-          key={idx}
-          src={`/${item.imgurl}.jpg`} 
-          alt={`carousel image ${idx + 1}`}
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
-            idx === index ? "opacity-100" : "opacity-0"
-          } ${animationClass[idx === index ? 1 : 0]}`}
-        />
+        <div key={idx} className="absolute inset-0 w-full h-full">
+          <Image
+            key={idx}
+            src={`/${item.imgurl}.jpg`}
+            alt={`carousel image ${idx + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+              idx === index ? "opacity-100" : "opacity-0"
+            } ${animationClass[idx === index ? 1 : 0]}`}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       ))}
     </div>
   );
@@ -66,11 +71,17 @@ const HomePageGridCarousel = () => {
         </div>
 
         <div className="row-start-2 h-48 md:h-auto">
-          {renderCarousel(secondCarouselIndex, ["translate-x-full", "translate-x-0"])}
+          {renderCarousel(secondCarouselIndex, [
+            "translate-x-full",
+            "translate-x-0",
+          ])}
         </div>
 
         <div className="row-start-2 h-48 md:h-auto">
-          {renderCarousel(thirdCarouselIndex, ["translate-y-full", "translate-y-0"])}
+          {renderCarousel(thirdCarouselIndex, [
+            "translate-y-full",
+            "translate-y-0",
+          ])}
         </div>
       </div>
     </div>
